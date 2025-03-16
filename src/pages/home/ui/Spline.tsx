@@ -6,7 +6,6 @@ export default function SplineBlock() {
 	const { isScreenMd, isScreenSm } = useResize();
 	return (
 		<div
-			onMouseMove={(e) => e.preventDefault()}
 			style={{
 				zIndex: 50,
 				overflow: "hidden",
@@ -14,17 +13,7 @@ export default function SplineBlock() {
 			}}
 		>
 			{!isScreenMd ? (
-				<Spline
-					scene="https://prod.spline.design/RAZc0QtUoFzn8Qav/scene.splinecode"
-					style={{
-						width: !isScreenSm ? "100%" : "450px",
-						height: "450px",
-						left: !isScreenSm ? "-5%" : "",
-						position: !isScreenSm ? "relative" : "static",
-						margin: !isScreenSm ? "" : "0 auto",
-					}}
-					className="spline"
-				/>
+				<img src="./cubic.gif" className="mx-auto" alt="" />
 			) : (
 				<Spline
 					scene="https://prod.spline.design/m4LY1JZtHyIpXq4g/scene.splinecode"

@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d73b3c01-f7a1-4acd-92b0-e725d6cce0ff" name="Changes" comment="new version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/api/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/api/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/ui/Team.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/ui/Team.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/ui/home-desktop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/ui/home-desktop.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/ui/home-mobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/ui/home-mobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/ui/home-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/ui/home-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/ui/Spline.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/ui/Spline.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,18 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Rach840"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Rach840&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Rach840/ALtergemu-public-new.git",
-    "accountId": "5a8bc875-4152-4d2a-839c-4dd081879fc1"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Rach840/ALtergemu-public-new.git&quot;,
+    &quot;accountId&quot;: &quot;5a8bc875-4152-4d2a-839c-4dd081879fc1&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -53,7 +48,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\rachb\\WebstormProjects\\altergemu-public-new\\node_modules\\prettier",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\rachb\\WebstormProjects\\altergemu-public-new-mobile\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "C:\\Users\\rachb\\WebstormProjects\\altergemu-public-new-mobile\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -83,6 +78,7 @@
       <workItem from="1742134092213" duration="953000" />
       <workItem from="1742135238879" duration="4115000" />
       <workItem from="1742141821168" duration="11073000" />
+      <workItem from="1742160013234" duration="1338000" />
     </task>
     <task id="LOCAL-00001" summary="new version">
       <option name="closed" value="true" />
