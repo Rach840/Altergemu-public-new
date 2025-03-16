@@ -21,7 +21,6 @@ export default function HomeDesktopPage() {
 		(async () => {
 			const teamResponce: Response = await fetch("/api/team");
 			const team = await teamResponce.json();
-			console.log(team);
 			if (Array.isArray(team) && team.length > 0) {
 				setTeam(team);
 			}
@@ -66,7 +65,7 @@ export default function HomeDesktopPage() {
 						</div>
 					</div>
 
-					<SplineBlock isScreenLg={!isScreenLg} />
+					<SplineBlock />
 				</div>
 			</div>
 			<div className="-z-20 min-h-full w-full absolute">
@@ -131,7 +130,7 @@ export default function HomeDesktopPage() {
 				</Fade>
 			</div>
 
-			<div className="  z-40 bg-transparent  mb-6">
+			<div className="  z-40 bg-transparent  mb-24">
 				<div className="w-80 mx-auto bg-gray-800 py-4 rounded-xl">
 					<h3 className="text-green-400   text-4xl font-bold  text-center">
 						Участники

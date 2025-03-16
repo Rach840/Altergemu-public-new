@@ -7,16 +7,15 @@ import SpotlightCard from "@/src/shared/ui/SpotlightCard";
 
 export default function Team({ team }: { team: User[] }) {
 	const { isScreenMd, isScreenLg } = useResize();
-	console.log(team);
-	return (
-		<Fade
-			cascade
-			damping={0.2}
-			triggerOnce={true}
-			className=" pb-4  lg:w-[480px]  mx-3 lg:mx-0 text-center"
-		>
-			{team.map((item) =>
-				isScreenLg ? (
+	if (isScreenLg) {
+		return (
+			<Fade
+				cascade
+				damping={0.2}
+				triggerOnce={true}
+				className=" pb-4  lg:w-[480px]  mx-3 lg:mx-0 text-center"
+			>
+				{team.map((item) => (
 					<TiltedCard
 						key={item.id}
 						imageSrc={item.avatarUrl as string}
@@ -46,7 +45,13 @@ export default function Team({ team }: { team: User[] }) {
 							</SpotlightCard>
 						}
 					/>
-				) : (
+				))}
+			</Fade>
+		);
+	} else {
+		return (
+			<div className="pb-4 md:w-[480px] space-y-6  mx-3 lg:mx-0 text-center">
+				{team.map((item) => (
 					<div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
 						<div className="aspect-square overflow-hidden">
 							<img
@@ -65,8 +70,8 @@ export default function Team({ team }: { team: User[] }) {
 							<p className="text-gray-300">{item.bio}</p>
 						</div>
 					</div>
-				),
-			)}
-		</Fade>
-	);
+				))}
+			</div>
+		);
+	}
 }
