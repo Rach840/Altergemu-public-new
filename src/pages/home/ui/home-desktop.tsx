@@ -7,7 +7,7 @@ import BlurText from "@/src/shared/ui/AnimationTexts/BlurText";
 import Squares from "@/src/shared/ui/Backgrounds/Squares";
 import ASCIIText from "@/src/shared/ui/AnimationTexts/ASCIIText";
 import { User } from "@/src/db/schema";
-import SplineBlock from "@/src/pages/home/ui/Spline";
+import SplineBlock from "@/src/shared/ui/Spline";
 import ProjectCarousel from "./project-carousel";
 import Team from "@/src/pages/home/ui/Team";
 import SendForm from "@/src/pages/home/ui/form/send-form";

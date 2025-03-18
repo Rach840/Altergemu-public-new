@@ -42,7 +42,7 @@ const ProjectCarousel = () => {
 						{projects.map((project) => (
 							<CarouselItem className=" xl:mx-14 rounded-xl" key={project.name}>
 								<div className="    ">
-									<Card className="bg-opacity-0 border-0  shadow-none">
+									<Card className="bg-opacity-0 p-0 border-0  shadow-none">
 										<CardContent className="px-0 xl:px-4  xl:p-6">
 											<div className="relative xl:px-14 space-x-2 lg:space-x-6   items-center flex flex-col lg:flex-row  w-full">
 												{!project.noImage ? (

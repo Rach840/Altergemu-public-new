@@ -5,7 +5,7 @@ import ProjectCarousel from "./project-carousel";
 import Team from "@/src/pages/home/ui/Team";
 import SendForm from "@/src/pages/home/ui/form/send-form";
 import TeamSkeleton from "@/src/pages/home/ui/Team-skeleton";
-import SplineBlock from "@/src/pages/home/ui/Spline";
+import SplineBlock from "@/src/shared/ui/Spline";
 export default function HomeMobilePage() {
 	const [team, setTeam] = useState<User[]>([]);
 	useEffect(() => {
@@ -40,10 +40,11 @@ export default function HomeMobilePage() {
 
 			{/* About Section */}
 			<div className="px-4 py-8">
-				<div className="mt-8 bg-gray-800 rounded-xl p-6">
-					<h2 className="text-center text-3xl font-bold text-green-400 mb-4">
+			<h2 className="text-center text-3xl font-bold text-green-400 mb-4">
 						О команде
 					</h2>
+				<div className="mt-8 bg-gray-800 rounded-xl p-6">
+				
 					<p className="text-white text-base">
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
 						consectetur fugiat natus quasi officiis nam quia, hic, rem eveniet nobis
@@ -62,17 +63,18 @@ export default function HomeMobilePage() {
 
 			{/* Projects Section */}
 			<div className="px-4 py-8">
-				<div className="bg-gray-800 rounded-xl pt-6  sm:p-4">
-					<h3 className="text-green-400 text-3xl mb-3 font-bold text-center">
+			<h3 className="text-green-400 text-3xl mb-4 font-bold text-center">
 						Наши Проекты
 					</h3>
+				<div className="bg-gray-800 rounded-xl pt-0">
+				
 					<ProjectCarousel />
 				</div>
 			</div>
 
 			{/* Team Section */}
 			<div className="px-4 py-8">
-				<div className="w-full mx-auto bg-gray-800 py-4 rounded-xl mb-6">
+				<div className="w-full mx-auto  py-4 rounded-xl mb-6">
 					<h3 className="text-green-400 text-3xl font-bold text-center">
 						Участники
 					</h3>

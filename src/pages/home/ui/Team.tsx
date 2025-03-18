@@ -4,6 +4,9 @@ import { User } from "@/src/db/schema";
 import TiltedCard from "@/src/shared/ui/TiltedCard";
 import { useResize } from "../../../shared/hooks/useResize";
 import SpotlightCard from "@/src/shared/ui/SpotlightCard";
+import { Avatar } from "@mui/material";
+import { MemberModile } from "./member-mobile";
+
 
 export default function Team({ team }: { team: User[] }) {
 	const { isScreenMd, isScreenLg } = useResize();
@@ -50,26 +53,24 @@ export default function Team({ team }: { team: User[] }) {
 		);
 	} else {
 		return (
-			<div className="pb-4 md:w-[480px] space-y-6  mx-3 lg:mx-0 text-center">
+			<div className="pb-4 md:w-[480px] grid grid-cols-2 gap-6  mx-3 lg:mx-0 text-center">
 				{team.map((item) => (
-					<div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
-						<div className="aspect-square overflow-hidden">
-							<img
-								src={item.avatarUrl as string}
-								alt={item.firstName}
-								className="w-full h-full object-cover object-center transition-transform duration-300 ease-in-out hover:scale-110"
-							/>
-						</div>
-						<div className="p-6">
-							<h2 className="text-2xl font-bold mb-2">
-								{item.firstName} {item.lastName}
-							</h2>
-							<p className="text-blue-400 mb-4">
-								{item.devStatus ? item.devStatus.split(",").join(", ") : ""}
-							</p>
-							<p className="text-gray-300">{item.bio}</p>
-						</div>
+					<MemberModile member={item} > 
+					 <div  className="bg-gray-800 col-span-1 p-4 rounded-lg overflow-hidden shadow-lg">
+					<div className=" py-2 overflow-hidden">
+						<Avatar alt={item.firstName} className="size-20 mx-auto" src={item.avatarUrl as string} />
+				
 					</div>
+				
+						<h2 className="text-xl font-bold mb-2">
+							{item.firstName} {item.lastName}
+						</h2>
+						<p className="text-blue-400 text-sm mb-4">
+							{item.devStatus ? item.devStatus.split(",").join(", ") : ""}
+						</p>
+					
+				</div>
+				</MemberModile>
 				))}
 			</div>
 		);
