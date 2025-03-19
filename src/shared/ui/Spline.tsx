@@ -1,9 +1,8 @@
 import React from "react";
-import Spline from "@splinetool/react-spline";
 import { useResize } from "@/src/shared/hooks/useResize";
 
 export default function SplineBlock() {
-	const { isScreenMd, isScreenSm } = useResize();
+	const { isScreenMd } = useResize();
 	return (
 		<div
 			style={{
@@ -13,22 +12,10 @@ export default function SplineBlock() {
 			}}
 		>
 			{!isScreenMd ? (
-				<img src="./cubic.gif" className="mx-auto" alt="" />
+				<img src="./cubic-mobile.gif" className="mx-auto" alt="" />
 			) : (
-				<Spline
-					scene="https://prod.spline.design/m4LY1JZtHyIpXq4g/scene.splinecode"
-					className="spline"
-					style={{
-						width: "650px",
-						height: "650px",
-					}}
-				/>
+				<img src="./cubic-desk.gif" className="w-[650px] h-[650]" alt="" />
 			)}
-			<style>{`
-							.spline canvas{
-							position:relative;
-							}
-							`}</style>
 		</div>
 	);
 }

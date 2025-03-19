@@ -5,17 +5,17 @@ import React from "react";
 import Threads from "@/src/shared/ui/Backgrounds/Threads";
 import BlurText from "@/src/shared/ui/AnimationTexts/BlurText";
 import Squares from "@/src/shared/ui/Backgrounds/Squares";
-import ASCIIText from "@/src/shared/ui/AnimationTexts/ASCIIText";
 import { User } from "@/src/db/schema";
 import SplineBlock from "@/src/shared/ui/Spline";
 import ProjectCarousel from "./project-carousel";
 import Team from "@/src/pages/home/ui/Team";
 import SendForm from "@/src/pages/home/ui/form/send-form";
-import TeamSkeleton from "@/src/pages/home/ui/Team-skeleton";
+
 import { useResize } from "@/src/shared/hooks/useResize";
+import { FullPageSpinner } from "@/src/shared/ui/spinner";
 
 export default function HomeDesktopPage() {
-	const { isScreenMd, isScreenLg } = useResize();
+	const { isScreenLg } = useResize();
 	const [team, setTeam] = useState<User[]>([]);
 	React.useEffect(() => {
 		(async () => {
@@ -38,7 +38,11 @@ export default function HomeDesktopPage() {
 						position: "absolute",
 					}}
 				>
-					<Threads amplitude={1.6} distance={0.6} enableMouseInteraction={false} />
+					<Threads
+						amplitude={1.6}
+						distance={0.6}
+						enableMouseInteraction={false}
+					/>
 				</div>
 
 				<div className="flex justify-between mt-14 flex-col-reverse lg:flex-row  w-11/12 mx-auto   items-center">
@@ -76,6 +80,22 @@ export default function HomeDesktopPage() {
 					borderColor="#fff"
 					hoverFillColor="#222"
 				/>
+				<style>{`
+        canvas {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          image-rendering: optimizeSpeed;
+          image-rendering: -moz-crisp-edges;
+          image-rendering: -o-crisp-edges;
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: optimize-contrast;
+          image-rendering: crisp-edges;
+          image-rendering: pixelated;
+        }
+      `}</style>
 			</div>
 
 			<div className="bg-opacity-0 z-40  h-full mb-6  py-10">
@@ -105,11 +125,12 @@ export default function HomeDesktopPage() {
 									О команде
 								</h2>
 								<p className="text-lg text-white sm:text-xl lg:text-2xl">
-									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-									consectetur fugiat natus quasi officiis nam quia, hic, rem eveniet
-									nobis quis fugit facilis obcaecati eos impedit ipsam accusamus dolorum
-									velit eligendi doloremque? Voluptates, maiores. Blanditiis nostrum
-									harum soluta laudantium similique rerum architecto doloremque, nam
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+									Quibusdam, consectetur fugiat natus quasi officiis nam quia,
+									hic, rem eveniet nobis quis fugit facilis obcaecati eos
+									impedit ipsam accusamus dolorum velit eligendi doloremque?
+									Voluptates, maiores. Blanditiis nostrum harum soluta
+									laudantium similique rerum architecto doloremque, nam
 									accusamus sint. Aliquam explicabo beatae sit.
 								</p>
 							</div>
@@ -137,29 +158,26 @@ export default function HomeDesktopPage() {
 					</h3>
 				</div>
 
-				<div className="container mx-auto   place-items-center grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-y-5  md:gap-x-[120px]">
-					{team != undefined ? <Team team={team} /> : <TeamSkeleton />}
-				</div>
+				{team != undefined ? (
+					<Team team={team} />
+				) : (
+					<FullPageSpinner color="green" />
+				)}
 			</div>
 
 			<div className="relative z-40 bg-transparent  mb-6">
-				<div className="relative  container bg-gray-800 rounded-xl mx-auto py-14 sm:py-0 h-[30vh] sm:h-[60vh] flex flex-col">
-					{!isScreenMd ? (
-						<div className="">
-							<h3 className="text-green-400 text-3xl   mb-3 font-bold text-center">
-								Попробуй себя в Altergemu
-							</h3>
-						</div>
-					) : (
-						<ASCIIText
-							text="Попробуй себя в Altergemu"
-							enableWaves={true}
-							asciiFontSize={5}
-							planeBaseHeight={5}
-							textFontSize={40}
-							textColor="#2adb6a"
-						/>
-					)}
+				<div className="relative  container bg-gray-800  rounded-xl mx-auto py-14  h-[30vh] sm:h-[30vh] flex flex-col">
+					{/* <ASCIIText*/}
+					{/* 	text="Попробуй себя в Altergemu"*/}
+					{/*enableWaves={true}*/}
+					{/* 	asciiFontSize={5}*/}
+					{/* 	planeBaseHeight={5}*/}
+					{/* 	textFontSize={40}*/}
+					{/* 	textColor="#2adb6a"*/}
+					{/*/>*/}
+					<h3 className="text-green-400 text-4xl mb-14 font-bold text-center">
+						Попробуй себя в Altergemu
+					</h3>
 
 					<div className="  flex flex-col items-center h-full mb-14 justify-end   ">
 						<SendForm />

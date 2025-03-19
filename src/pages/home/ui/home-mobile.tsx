@@ -4,8 +4,8 @@ import type { User } from "@/src/db/schema";
 import ProjectCarousel from "./project-carousel";
 import Team from "@/src/pages/home/ui/Team";
 import SendForm from "@/src/pages/home/ui/form/send-form";
-import TeamSkeleton from "@/src/pages/home/ui/Team-skeleton";
 import SplineBlock from "@/src/shared/ui/Spline";
+import { FullPageSpinner } from "@/src/shared/ui/spinner";
 export default function HomeMobilePage() {
 	const [team, setTeam] = useState<User[]>([]);
 	useEffect(() => {
@@ -31,8 +31,9 @@ export default function HomeMobilePage() {
 					</div>
 					<div className="text-center ">
 						<h2 className="mt-4 text-pretty text-lg font-medium text-green-400 revealed">
-							Команда разработчиков-профессионалов, разрабатывающая широкий спектр
-							продуктов, начиная от сайтов и игр, заканчивая системой контроля версий
+							Команда разработчиков-профессионалов, разрабатывающая широкий
+							спектр продуктов, начиная от сайтов и игр, заканчивая системой
+							контроля версий
 						</h2>
 					</div>
 				</div>
@@ -40,16 +41,15 @@ export default function HomeMobilePage() {
 
 			{/* About Section */}
 			<div className="px-4 py-8">
-			<h2 className="text-center text-3xl font-bold text-green-400 mb-4">
-						О команде
-					</h2>
+				<h2 className="text-center text-3xl font-bold text-green-400 mb-4">
+					О команде
+				</h2>
 				<div className="mt-8 bg-gray-800 rounded-xl p-6">
-				
 					<p className="text-white text-base">
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-						consectetur fugiat natus quasi officiis nam quia, hic, rem eveniet nobis
-						quis fugit facilis obcaecati eos impedit ipsam accusamus dolorum velit
-						eligendi doloremque? Voluptates, maiores.
+						consectetur fugiat natus quasi officiis nam quia, hic, rem eveniet
+						nobis quis fugit facilis obcaecati eos impedit ipsam accusamus
+						dolorum velit eligendi doloremque? Voluptates, maiores.
 					</p>
 					<div className="mt-4 flex justify-center">
 						<img
@@ -63,11 +63,10 @@ export default function HomeMobilePage() {
 
 			{/* Projects Section */}
 			<div className="px-4 py-8">
-			<h3 className="text-green-400 text-3xl mb-4 font-bold text-center">
-						Наши Проекты
-					</h3>
+				<h3 className="text-green-400 text-3xl mb-4 font-bold text-center">
+					Наши Проекты
+				</h3>
 				<div className="bg-gray-800 rounded-xl pt-0">
-				
 					<ProjectCarousel />
 				</div>
 			</div>
@@ -81,7 +80,11 @@ export default function HomeMobilePage() {
 				</div>
 
 				<div className="flex flex-col items-center gap-6">
-					{team.length > 0 ? <Team team={team} /> : <TeamSkeleton />}
+					{team.length > 0 ? (
+						<Team team={team} />
+					) : (
+						<FullPageSpinner color="green" />
+					)}
 				</div>
 			</div>
 

@@ -7,7 +7,6 @@ import {
 	CarouselPrevious,
 } from "@/src/shared/ui/carousel";
 import { Card, CardContent } from "@/src/shared/ui/card";
-import FuzzyText from "@/src/shared/ui/AnimationTexts/FuzzyText";
 import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 
@@ -57,15 +56,7 @@ const ProjectCarousel = () => {
 														}
 													/>
 												) : (
-													<div className=" relative mx-auto w-[343px] h-[200px] lg:rotate-0 lg:static  rounded-t-lg lg:rounded-xl w-full lg:w-6/12 object-cover ">
-														<FuzzyText
-															baseIntensity={0.2}
-															hoverIntensity={0}
-															enableHover={true}
-														>
-															404
-														</FuzzyText>
-													</div>
+													<div className=" relative mx-auto w-[343px] h-[200px] lg:rotate-0 lg:static  rounded-t-lg lg:rounded-xl w-full lg:w-6/12 object-cover "></div>
 												)}
 												<div className=" w-full lg:w-6/12   place-items-center ">
 													<div className="  p-8 rounded-b-xl lg:rounded-xl text-center">
@@ -77,7 +68,11 @@ const ProjectCarousel = () => {
 														</h4>
 														<div className="flex justify-center gap-2">
 															<Link href={project.projectUrl}>
-																<Button size="lg" variant="gradient" color="black">
+																<Button
+																	size="lg"
+																	variant="gradient"
+																	color="black"
+																>
 																	Перейти на проект
 																</Button>
 															</Link>
