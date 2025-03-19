@@ -47,7 +47,7 @@ export default function Team({ team }: { team: User[] }) {
 							<div className=" py-2 overflow-hidden">
 								<img
 									alt={item.firstName}
-									className="size-20 mx-auto"
+									className="size-20 rounded-[50%] mx-auto"
 									src={item.avatarUrl as string}
 								/>
 							</div>
